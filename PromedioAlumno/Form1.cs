@@ -31,5 +31,39 @@ namespace PromedioAlumno
             txtNumAlumnos.Clear();
             txtNumAlumnos.Focus();
         }
+
+        private void btnCalcu_Click(object sender, EventArgs e)
+        {
+            int noAlumnos = 0;
+            double cSuma = 0, cProm;
+            if (txtNumAlumnos.Text.Length > 0)
+            {
+                noAlumnos = int.Parse(txtNumAlumnos.Text);
+                double[] calif = new double[noAlumnos];
+
+                for (int i = 0; i < noAlumnos; i++)
+                {
+                    try
+                    {
+                        calif[i] = int.Parse(Microsoft.VisualBasic.Interaction.InputBox("Escribe la calificación: " + (i + 1), "Promedio de Calificaciones", "", 500, 280));
+                    }
+                    catch (Exception varEx)
+                    {
+                        MessageBox.Show("Hubo un error. Debes agregar la calificación del alumno.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    cSuma += calif[i];
+                }
+                cProm = cSuma / noAlumnos;
+                txtProm.Text = cProm.ToString("N2");
+                Array.Sort(calif);
+                txtCalBa.Text = calif[0].ToString();
+                Array.Reverse(calif);
+                txtCalAl.Text = calif[0].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Ingresa la cantidad de alumnos para hacer el calculo.", "Promedios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
