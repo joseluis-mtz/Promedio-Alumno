@@ -15,5 +15,21 @@ namespace PromedioAlumno
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            txtProm.Enabled = false;
+            txtCalAl.Enabled = false;
+            txtCalBa.Enabled = false;
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            txtCalAl.Clear();
+            txtCalBa.Clear();
+            txtProm.Clear();
+            txtNumAlumnos.Clear();
+            txtNumAlumnos.Focus();
+        }
     }
 }
