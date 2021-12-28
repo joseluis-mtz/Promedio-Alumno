@@ -65,5 +65,15 @@ namespace PromedioAlumno
                 MessageBox.Show("Ingresa la cantidad de alumnos para hacer el calculo.", "Promedios", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtNumAlumnos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Libreria_validacion.Validar.SoloNumeros(e);
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

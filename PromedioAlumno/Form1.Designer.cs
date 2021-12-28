@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCalcu = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,17 +54,18 @@
             this.btnCalcu.UseVisualStyleBackColor = false;
             this.btnCalcu.Click += new System.EventHandler(this.btnCalcu_Click);
             // 
-            // button2
+            // btnSalir
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(260, 254);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 27);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Salir";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSalir.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(260, 254);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(100, 27);
+            this.btnSalir.TabIndex = 31;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnNew
             // 
@@ -154,6 +155,7 @@
             this.txtNumAlumnos.Name = "txtNumAlumnos";
             this.txtNumAlumnos.Size = new System.Drawing.Size(100, 26);
             this.txtNumAlumnos.TabIndex = 22;
+            this.txtNumAlumnos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumAlumnos_KeyPress);
             // 
             // Form1
             // 
@@ -162,7 +164,7 @@
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(403, 313);
             this.Controls.Add(this.btnCalcu);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -184,7 +186,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnCalcu;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
